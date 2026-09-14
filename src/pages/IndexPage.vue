@@ -1,20 +1,24 @@
 <template>
   <q-page class="flex flex-center">
+  <div class="q-pa-md example-row-mix-and-match">
+  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
   <div class="row">
-  <div class="col-2">...</div>
+    <div class="col col-md-8">.col .col-md-8</div>
+    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+  </div>
 
-  <!-- 2 + 6 < 12, so next element is placed on same line -->
-  <div class="col-6">...</div>
+  <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+  <div class="row">
+    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+  </div>
 
-  <!-- 2 + 6 + 10 > 12, so next element wraps to next line -->
-  <div class="col-10">...</div>
-
-  <!--
-    10 + 3 > 12, so next element wraps to next line.
-    Note that we take into consideration the current line only
-    (with col-10 only, since it was wrapped to its own line).
-  -->
-  <div class="col-3">...</div>
+  <!-- Columns are always 50% wide, on mobile and desktop -->
+  <div class="row">
+    <div class="col-6">.col-6</div>
+    <div class="col-6">.col-6</div>
+  </div>
 </div>
   </q-page>
 
