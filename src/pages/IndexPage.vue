@@ -1,40 +1,32 @@
 <template>
   <q-page class="flex flex-center">
-<div class="q-pa-md example-row-horizontal-alignment">
-  <q-badge>justify-start</q-badge>
-  <div class="row justify-start">
-    <div class="col-4"> One of two cols </div>
-    <div class="col-4"> One of two cols </div>
+<div class="q-pa-md example-row-vertical-alignment">
+  <q-badge>items-start</q-badge>
+  <div class="row items-start">
+    <div class="col"> One of three cols </div>
+    <div class="col"> One of three cols </div>
+    <div class="col"> One of three cols </div>
   </div>
 
-  <q-badge>justify-center</q-badge>
-  <div class="row justify-center">
-    <div class="col-4"> One of two cols </div>
-    <div class="col-4"> One of two cols </div>
+  <q-badge>items-center</q-badge>
+  <div class="row items-center">
+    <div class="col"> One of three cols </div>
+    <div class="col"> One of three cols </div>
+    <div class="col"> One of three cols </div>
   </div>
 
-  <q-badge>justify-end</q-badge>
-  <div class="row justify-end">
-    <div class="col-4"> One of two cols </div>
-    <div class="col-4"> One of two cols </div>
+  <q-badge>items-end</q-badge>
+  <div class="row items-end">
+    <div class="col"> One of three cols </div>
+    <div class="col"> One of three cols </div>
+    <div class="col"> One of three cols </div>
   </div>
 
-  <q-badge>justify-around</q-badge>
-  <div class="row justify-around">
-    <div class="col-4"> One of two cols </div>
-    <div class="col-4"> One of two cols </div>
-  </div>
-
-  <q-badge>justify-between</q-badge>
-  <div class="row justify-between">
-    <div class="col-4"> One of two cols </div>
-    <div class="col-4"> One of two cols </div>
-  </div>
-
-  <q-badge>justify-evenly</q-badge>
-  <div class="row justify-evenly">
-    <div class="col-4"> One of two cols </div>
-    <div class="col-4"> One of two cols </div>
+  <q-badge>self-*</q-badge>
+  <div class="row">
+    <div class="col self-start"> .self-start </div>
+    <div class="col self-center"> .self-center </div>
+    <div class="col self-end"> .self-end </div>
   </div>
 </div>
   </q-page>
