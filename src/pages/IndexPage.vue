@@ -1,32 +1,10 @@
 <template>
   <q-page class="flex flex-center">
-<div class="q-pa-md example-row-vertical-alignment">
-  <q-badge>items-start</q-badge>
-  <div class="row items-start">
-    <div class="col"> One of three cols </div>
-    <div class="col"> One of three cols </div>
-    <div class="col"> One of three cols </div>
-  </div>
-
-  <q-badge>items-center</q-badge>
-  <div class="row items-center">
-    <div class="col"> One of three cols </div>
-    <div class="col"> One of three cols </div>
-    <div class="col"> One of three cols </div>
-  </div>
-
-  <q-badge>items-end</q-badge>
-  <div class="row items-end">
-    <div class="col"> One of three cols </div>
-    <div class="col"> One of three cols </div>
-    <div class="col"> One of three cols </div>
-  </div>
-
-  <q-badge>self-*</q-badge>
-  <div class="row">
-    <div class="col self-start"> .self-start </div>
-    <div class="col self-center"> .self-center </div>
-    <div class="col self-end"> .self-end </div>
+<div class="q-pa-md example-row-reverse">
+  <div class="row reverse">
+    <div class="col"> First, but last </div>
+    <div class="col"> Second, unchanged </div>
+    <div class="col"> Third, but first </div>
   </div>
 </div>
   </q-page>
