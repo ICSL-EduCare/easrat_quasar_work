@@ -6,34 +6,33 @@
       style="height: 400px"
       class="shadow-2 rounded-borders"
     >
-      <q-header elevated>
+      <q-header bordered class="bg-grey-3 text-primary">
         <q-toolbar>
-          <q-btn
-            aria-label="Toggle drawer"
-            flat
-            round
-            dense
-            icon="menu"
-            class="q-mr-sm"
-          />
-          <q-avatar>
-            <img
-              alt="Quasar logo"
-              src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg"
-            />
-          </q-avatar>
-
-          <q-toolbar-title>Quasar Framework</q-toolbar-title>
-
-          <q-btn aria-label="Trending" flat round dense icon="whatshot" />
+          <q-toolbar-title class="text-center">
+            <q-avatar>
+              <img
+                alt="Quasar logo"
+                src="https://cdn.quasar.dev/logo-v2/svg/logo.svg"
+              />
+            </q-avatar>
+            Quasar Framework
+          </q-toolbar-title>
         </q-toolbar>
+      </q-header>
 
-        <q-tabs v-model="tab">
+      <q-footer bordered class="bg-grey-3 text-primary">
+        <q-tabs
+          no-caps
+          active-color="primary"
+          indicator-color="transparent"
+          class="text-grey-8"
+          v-model="tab"
+        >
           <q-tab name="images" label="Images" />
           <q-tab name="videos" label="Videos" />
           <q-tab name="articles" label="Articles" />
         </q-tabs>
-      </q-header>
+      </q-footer>
 
       <q-page-container>
         <q-page class="q-pa-md">
