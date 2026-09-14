@@ -1,75 +1,75 @@
 <template>
-  <q-page class="flex flex-center">
-<div class="q-px-xl q-py-md" style="max-width: 500px">
-  <p>.q-gutter and unsized children</p>
-  <div class="row text-dark">
-    <div class="col bg-amber">
-      <div class="row q-gutter-lg">
-        <div :class="`bg-blue-${n + 1}`" v-for="n in 7" :key="n"> Child </div>
-      </div>
-    </div>
-  </div>
+  <div class="q-pa-md example-masonry">
+    <q-btn
+      class="q-mb-md"
+      color="primary"
+      label="Regenerate layout"
+      @click="onClick"
+    />
 
-  <q-separator class="q-my-md" />
+    <div class="column example-container">
+      <div class="flex-break hidden"></div>
+      <div class="flex-break"></div>
+      <div class="flex-break"></div>
+      <div class="flex-break"></div>
 
-  <p>.q-col-gutter and unsized children</p>
-  <div class="row text-black">
-    <div class="col bg-amber q-mt-lg">
-      <div class="row q-col-gutter-lg">
-        <div
-          class="semi-transparent"
-          :class="`bg-blue-${n + 1}`"
-          v-for="n in 7"
-          :key="n"
-        >
-          Child
+      <div
+        v-for="(cell, i) in cells"
+        :key="i"
+        class="example-cell"
+        tabindex="0"
+      >
+        <div>
+          <div v-for="(text, j) in cell" :key="j">
+            {{ text }}
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <q-separator class="q-my-md" />
-
-  <p
-    >.q-gutter and .col-6 sized children - 2 .col-6 adds up to
-    <strong>more than 100%</strong></p
-  >
-  <div class="row text-dark">
-    <div class="col bg-amber">
-      <div class="row q-gutter-lg">
-        <div
-          class="col-6"
-          :class="`bg-blue-${n + 1}`"
-          v-for="n in 5"
-          :key="n"
-        >
-          Child
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <q-separator class="q-my-md" />
-
-  <p
-    >.q-col-gutter and .col-6 sized children - 2 .col-6 adds up to
-    <strong>100%</strong></p
-  >
-  <div class="row text-dark">
-    <div class="col bg-amber q-mt-lg">
-      <div class="row q-col-gutter-lg">
-        <div
-          class="semi-transparent col-6"
-          :class="`bg-blue-${n + 1}`"
-          v-for="n in 5"
-          :key="n"
-        >
-          Child
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-  </q-page>
-
 </template>
+
+<script setup>
+import { ref } from 'vue'
+
+const generateCells = () =>
+  Array.from({ length: 24 }, (item, cell) =>
+    Array.from(
+      { length: 2 + Math.ceil(3 * Math.random()) },
+      (entry, text) => `Cell ${cell + 1} - ${text + 1}`
+    )
+  )
+
+const cells = ref(generateCells())
+
+function onClick() {
+  cells.value = generateCells()
+}
+</script>
+
+<style lang="sass">
+.example-masonry
+  .flex-break
+    flex: 1 0 100% !important
+    width: 0 !important
+
+  $x: 4
+
+  @for $i from 1 through ($x - 1)
+    .example-container > div:nth-child(#{$x}n + #{$i})
+      order: #{$i}
+
+  .example-container > div:nth-child(#{$x}n)
+    order: #{$x}
+
+  .example-container
+    height: 700px
+
+    .example-cell
+      width: 25%
+      padding: 1px
+
+      > div
+        padding: 4px 8px
+        box-shadow: inset 0 0 0 2px #9e9e9e
+</style>
