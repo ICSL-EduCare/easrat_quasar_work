@@ -1,23 +1,40 @@
 <template>
   <q-page class="flex flex-center">
-  <div class="q-pa-md example-row-mix-and-match">
-  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-  <div class="row">
-    <div class="col col-md-8">.col .col-md-8</div>
-    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+<div class="q-pa-md example-row-horizontal-alignment">
+  <q-badge>justify-start</q-badge>
+  <div class="row justify-start">
+    <div class="col-4"> One of two cols </div>
+    <div class="col-4"> One of two cols </div>
   </div>
 
-  <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-  <div class="row">
-    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+  <q-badge>justify-center</q-badge>
+  <div class="row justify-center">
+    <div class="col-4"> One of two cols </div>
+    <div class="col-4"> One of two cols </div>
   </div>
 
-  <!-- Columns are always 50% wide, on mobile and desktop -->
-  <div class="row">
-    <div class="col-6">.col-6</div>
-    <div class="col-6">.col-6</div>
+  <q-badge>justify-end</q-badge>
+  <div class="row justify-end">
+    <div class="col-4"> One of two cols </div>
+    <div class="col-4"> One of two cols </div>
+  </div>
+
+  <q-badge>justify-around</q-badge>
+  <div class="row justify-around">
+    <div class="col-4"> One of two cols </div>
+    <div class="col-4"> One of two cols </div>
+  </div>
+
+  <q-badge>justify-between</q-badge>
+  <div class="row justify-between">
+    <div class="col-4"> One of two cols </div>
+    <div class="col-4"> One of two cols </div>
+  </div>
+
+  <q-badge>justify-evenly</q-badge>
+  <div class="row justify-evenly">
+    <div class="col-4"> One of two cols </div>
+    <div class="col-4"> One of two cols </div>
   </div>
 </div>
   </q-page>
