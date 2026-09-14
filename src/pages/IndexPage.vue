@@ -1,75 +1,50 @@
 <template>
-  <div class="q-pa-md example-masonry">
-    <q-btn
-      class="q-mb-md"
-      color="primary"
-      label="Regenerate layout"
-      @click="onClick"
-    />
+  <div class="q-pa-md">
+  <q-layout
+    view="lHh lpr lFf"
+    container
+    style="height: 400px"
+    class="shadow-2 rounded-borders"
+  >
+    <q-header elevated>
+      <q-toolbar>
+        <q-btn
+          aria-label="Toggle drawer"
+          flat
+          round
+          dense
+          icon="menu"
+          class="q-mr-sm"
+        />
+        <q-avatar>
+          <img
+            alt="Quasar logo"
+            src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg"
+          />
+        </q-avatar>
 
-    <div class="column example-container">
-      <div class="flex-break hidden"></div>
-      <div class="flex-break"></div>
-      <div class="flex-break"></div>
-      <div class="flex-break"></div>
+        <q-toolbar-title>Quasar Framework</q-toolbar-title>
 
-      <div
-        v-for="(cell, i) in cells"
-        :key="i"
-        class="example-cell"
-        tabindex="0"
-      >
-        <div>
-          <div v-for="(text, j) in cell" :key="j">
-            {{ text }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+        <q-btn aria-label="Trending" flat round dense icon="whatshot" />
+      </q-toolbar>
+    </q-header>
+
+    <q-footer elevated>
+      <q-toolbar>
+        <q-toolbar-title>Footer</q-toolbar-title>
+      </q-toolbar>
+    </q-footer>
+
+    <q-page-container>
+      <q-page class="q-pa-md">
+        <p v-for="n in 15" :key="n">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil
+          praesentium molestias a adipisci, dolore vitae odit, quidem
+          consequatur optio voluptates asperiores pariatur eos numquam rerum
+          delectus commodi perferendis voluptate?
+        </p>
+      </q-page>
+    </q-page-container>
+  </q-layout>
+</div>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-
-const generateCells = () =>
-  Array.from({ length: 24 }, (item, cell) =>
-    Array.from(
-      { length: 2 + Math.ceil(3 * Math.random()) },
-      (entry, text) => `Cell ${cell + 1} - ${text + 1}`
-    )
-  )
-
-const cells = ref(generateCells())
-
-function onClick() {
-  cells.value = generateCells()
-}
-</script>
-
-<style lang="sass">
-.example-masonry
-  .flex-break
-    flex: 1 0 100% !important
-    width: 0 !important
-
-  $x: 4
-
-  @for $i from 1 through ($x - 1)
-    .example-container > div:nth-child(#{$x}n + #{$i})
-      order: #{$i}
-
-  .example-container > div:nth-child(#{$x}n)
-    order: #{$x}
-
-  .example-container
-    height: 700px
-
-    .example-cell
-      width: 25%
-      padding: 1px
-
-      > div
-        padding: 4px 8px
-        box-shadow: inset 0 0 0 2px #9e9e9e
-</style>
